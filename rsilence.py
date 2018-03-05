@@ -50,7 +50,7 @@ def silenceSkip(input, output, cutOnly):
 			if(marks[i+1] != 'end'):
 				seg = seg + 1
 				length = float(marks[i+1]) - float(marks[i])
-				command = 'ffmpeg -y -nostats -i ' + input + ' -ss ' + str(float(marks[i])+0.5) + ' -t ' + str(float(length)-0.5) + ' -c:v copy -c:a copy -bsf:a aac_adtstoasc ./temp/cut' + str(seg) + '.mp4'
+				command = 'ffmpeg -y -nostats -i ' + input + ' -ss ' + str(float(marks[i])) + ' -t ' + str(float(length)-0.5) + ' -c:v copy -c:a copy -bsf:a aac_adtstoasc ./temp/cut' + str(seg) + '.mp4'
 			else:
 				seg = seg + 1
 				command = 'ffmpeg -y -nostats -i ' + input + ' -ss ' + str(marks[i]) + ' -c:v copy -c:a copy -bsf:a aac_adtstoasc ./temp/cut' + str(seg) + '.mp4'
